@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from "react";
-
-import logo from "./logo.svg";
-import "./App.css";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+import React from "react";
+import Header from "../Components/Header/Header";
+import Footer from "../Components/Footer/Footer";
+import First from "../Components/Section/First";
+import About from "../Components/Section/About";
+import Portfolio from "../Components/Section/Portfolio";
+import Contact from "../Components/Section/Contact";
 function App() {
   return (
-    <div className="">
+    <div>
       <Header />
+      <First />
+      <About />
+      <Portfolio />
+      <Contact />
       <Footer />
     </div>
   );
