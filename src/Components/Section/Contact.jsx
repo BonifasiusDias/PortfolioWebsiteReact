@@ -4,11 +4,11 @@ import { BsFacebook, BsLinkedin, BsInstagram } from "react-icons/bs";
 
 const Contact = () => {
   return (
-    <div className="font-nunito h-screen m-20">
-      <div className="grid grid-cols-2">
-        <div className="my-10 ml-10 border-r-2">
+    <div className="font-nunito h-auto md:h-screen my-10 md:m-20 lg:mx-48">
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="md:my-10 ml-10 md:border-r-2">
           <div className="text-xl font-semibold my-2">Contact Me!</div>
-          <p className="h-16">
+          <p className="md:h-16 mr-2">
             If you have any criticism and suggestions or maybe a new project,
             you can contact me from my number/email below! I will try my best to
             answer :D{" "}
@@ -45,7 +45,7 @@ const Contact = () => {
         </div>
         <div className="m-10">
           <div className="text-xl font-semibold my-2">Social Media</div>
-          <p className="h-16">
+          <p className="md:h-16">
             Don't forget to check my social media account below for any updates
             from me! And don't be shy to follow
           </p>
@@ -89,10 +89,14 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div class="ml-20">
+      <div class=" md:ml-20 ml-10">
         <div class="text-lg font-bold">Message me!</div>
-        <form className="flex mb-4" action="" method="POST">
-          <div class="w-1/2 my-2">
+        <form
+          className="flex flex-col md:flex-row mb-4"
+          action=""
+          method="POST"
+        >
+          <div class="md:w-1/2 my-2">
             <textarea
               className="w-11/12 border rounded-lg py-1 px-2 h-36 "
               placeholder="Message.."
@@ -101,11 +105,11 @@ const Contact = () => {
               required
             ></textarea>
           </div>
-          <div className="w-2/6">
+          <div className="md:w-2/6">
             <div>
               <div>
                 <input
-                  className="w-full my-2 py-1 px-2 border rounded-lg "
+                  className="w-11/12 md:w-full my-2 py-1 px-2 border rounded-lg "
                   type="text"
                   placeholder="Name"
                   id="name"
@@ -116,7 +120,7 @@ const Contact = () => {
             </div>
             <div class="">
               <input
-                className="w-full my-2  py-1 px-2 border rounded-lg "
+                className="w-11/12 md:w-full my-2  py-1 px-2 border rounded-lg "
                 type="email"
                 placeholder="Email"
                 id="email"
@@ -126,7 +130,7 @@ const Contact = () => {
             </div>
             <div class="">
               <input
-                className="w-full my-2  py-1 px-2 border rounded-lg "
+                className="w-11/12 md:w-full my-2  py-1 px-2 border rounded-lg "
                 type="text"
                 placeholder="Subject"
                 id="subject"
@@ -138,7 +142,7 @@ const Contact = () => {
         </form>
         <div>
           <button
-            className="bg-red-600 text-white py-1 px-6 rounded-lg hover:text-red-600 border-2 border-red-600 hover:bg-white"
+            className="ml-32 md:ml-0 bg-red-600 text-white py-1 px-6 rounded-lg hover:text-red-600 border-2 border-red-600 hover:bg-white"
             type="submit"
           >
             Send
