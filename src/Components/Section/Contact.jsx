@@ -4,7 +4,7 @@ import { BsFacebook, BsLinkedin, BsInstagram } from "react-icons/bs";
 
 const Contact = () => {
   return (
-    <div className="font-nunito h-auto md:h-screen my-10 md:m-20 lg:mx-48">
+    <div className="lg:text-lg font-nunito h-auto md:h-auto my-10 md:m-20 lg:mx-48">
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="md:my-10 ml-10 md:border-r-2">
           <div className="text-xl font-semibold my-2">Contact Me!</div>
@@ -89,7 +89,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div class=" md:ml-20 ml-10">
+      <div class=" md:ml-20 ml-10 mb-36">
         <div class="text-lg font-bold">Message me!</div>
         <form
           className="flex flex-col md:flex-row mb-4"
