@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import foto from "../../Assets/Foto2.jpg";
 import data from "../../dummyAbout.json";
