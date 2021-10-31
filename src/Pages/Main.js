@@ -5,7 +5,7 @@ import First from "../Components/Section/First";
 import About from "../Components/Section/About";
 import Portfolio from "../Components/Section/Portfolio";
 import Contact from "../Components/Section/Contact";
-function App() {
+function Main() {
   return (
     <div>
       <Header />
@@ -18,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;
