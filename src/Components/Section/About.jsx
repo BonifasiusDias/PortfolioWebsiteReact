@@ -8,7 +8,7 @@ const About = () => {
       <div className="flex mt-32 h-3/6">
         <div className="w-4/6">
           <img
-            className="z-0 absolute h-3/6 right-96 mr-96 rounded-lg"
+            className="z-0 absolute h-3/6 ml-72 2xl:right-96 2xl:mr-96 rounded-lg"
             src={foto}
           />
           <div className="mt-20 z-30 relative  text-7xl font-bold ">
