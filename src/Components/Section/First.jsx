@@ -1,6 +1,4 @@
-import { useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
 import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 

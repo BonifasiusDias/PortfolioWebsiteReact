@@ -2,7 +2,7 @@
   "name": "portfoliowebsitereact",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bonifasiusdias.github.io/PortfolioWebsiteReact/",
+  "homepage": "https://bonifasiusdias.github.io/",
   "dependencies": {
     "-": "0.0.1",
     "@craco/craco": "^6.4.0",
