@@ -5,6 +5,7 @@ import First from "../Components/Section/First";
 import About from "../Components/Section/About";
 import Portfolio from "../Components/Section/Portfolio";
 import Contact from "../Components/Section/Contact";
+
 function Main() {
   return (
     <div>

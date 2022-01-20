@@ -1,23 +1,56 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import { useAnimation } from "framer-motion";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import foto from "../../Assets/Foto2.jpg";
 import data from "../../dummyAbout.json";
+import { motion } from "framer-motion";
 const About = () => {
+  const animate = useAnimation();
+
+  const [contentRef, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-20%",
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animate.start("visible");
+    }
+  }, [animate, inView]);
+
   return (
-    <div className="h-screen mx-72">
+    <motion.div
+      ref={contentRef}
+      animate={animate}
+      initial="hidden"
+      variants={{
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 1, ease: [0.6, 0.05, -0.01, 0.9] },
+        },
+        hidden: {
+          opacity: 0,
+          y: 72,
+        },
+      }}
+      className="h-auto 2xl:h-screen mx-72"
+    >
+      <div className="w-full flex flex-col items-center">
+        <img className="z-0  mt-32 absolute h-3/6  rounded-lg" src={foto} />
+      </div>
       <div className="flex mt-32 h-3/6">
-        <div className="w-4/6">
-          <img
-            className="z-0 absolute h-3/6 ml-72 2xl:right-96 2xl:mr-96 rounded-lg"
-            src={foto}
-          />
+        <div className="w-3/6">
           <div className="mt-20 z-30 relative  text-7xl font-bold ">
             <h1>Bonifacius</h1>
             <h1 className="ml-48">Charis R.</h1>
           </div>
         </div>
-        <div className="mt-20 w-2/6 font-semibold">
-          <h1 className="text-4xl">Based in Indonesia,</h1>
+        <div className="mt-20 w-2/6 ml-44 font-semibold">
+          <h1 className="text-4xl">
+            Based in <span className="font-bold">Indonesia</span>,
+          </h1>
           <h1 className="text-3xl w-5/6"> currently studying </h1>
           <h1 className="text-3xl  text-red-600 font-bold">
             Computer Science.
@@ -30,7 +63,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="mt-20 grid grid-cols-2">
+      <div className="mt-10 grid grid-cols-2">
         <div className="mx-20">
           <p className="font-semibold text-justify">
             Being a website developer is a something that fun to do. You can
@@ -62,7 +95,7 @@ const About = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

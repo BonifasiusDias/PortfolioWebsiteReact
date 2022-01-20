@@ -1,0 +1,42 @@
+.slick-dots {
+  bottom: 10px;
+  left: 10px;
+  text-align: unset;
+}
+
+.slick-prev,
+.slick-next {
+  color: unset;
+  background: unset;
+  /* border-radius: 9999px;
+    border: 1px solid #c0c0c0;
+    font-size: 20px;
+    background: #fff;
+    z-index: 9999px; */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: unset;
+  background: unset;
+}
+
+.slick-dots.slick-thumb li {
+  width: 6px;
+  height: 6px;
+  margin: 0 3px;
+  border-radius: 999px;
+  transition: all 0.5s ease-in-out;
+  will-change: width;
+  background-color: black;
+}
+
+.slick-dots.slick-thumb li.slick-active {
+  background-color: white;
+  width: 24px;
+}
+
+/* .slick-slide {
+    padding-right: 1px;
+    padding-left: 1px;
+} */

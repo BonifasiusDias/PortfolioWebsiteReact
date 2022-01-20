@@ -1,4 +1,6 @@
-import React from "react";
+import { useAnimation } from "framer-motion";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import {
   SiJavascript,
@@ -12,9 +14,38 @@ import { FaVuejs } from "react-icons/fa";
 import CarouselComponent from "../Carousel/Carousel";
 import { Link } from "react-router-dom";
 const Portfolio = () => {
+  const animate = useAnimation();
+
+  const [contentRef, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-20%",
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animate.start("visible");
+    }
+  }, [animate, inView]);
+
   return (
     <div className="h-auto  bg-black">
-      <div className="mx-28 2xl:mx-72 py-32">
+      <motion.div
+        ref={contentRef}
+        animate={animate}
+        initial="hidden"
+        variants={{
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1, ease: [0.6, 0.05, -0.01, 0.9] },
+          },
+          hidden: {
+            opacity: 0,
+            y: 72,
+          },
+        }}
+        className="mx-28 2xl:mx-72 py-32"
+      >
         <div className="mx-24 pb-4 flex flex-col items-center">
           <CarouselComponent />
           <Link to="/workspace">
@@ -77,7 +108,7 @@ const Portfolio = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

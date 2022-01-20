@@ -1,10 +1,42 @@
-import React from "react";
+import { useAnimation } from "framer-motion";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import { LocationMarker, Phone, Mail } from "react-hero-icon/solid";
 import { BsFacebook, BsLinkedin, BsInstagram } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const Contact = () => {
+  const animate = useAnimation();
+
+  const [contentRef, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-20%",
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animate.start("visible");
+    }
+  }, [animate, inView]);
+
   return (
-    <div className="lg:text-lg font-nunito h-auto md:h-auto my-10 md:m-20 lg:mx-48">
+    <motion.div
+      ref={contentRef}
+      animate={animate}
+      initial="hidden"
+      variants={{
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 1, ease: [0.6, 0.05, -0.01, 0.9] },
+        },
+        hidden: {
+          opacity: 0,
+          y: 72,
+        },
+      }}
+      className="lg:text-lg font-nunito h-auto md:h-auto my-10 md:m-20 lg:mx-48"
+    >
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="md:my-10 ml-10 md:border-r-2">
           <div className="text-xl font-semibold my-2">Contact Me!</div>
@@ -149,7 +181,7 @@ const Contact = () => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
