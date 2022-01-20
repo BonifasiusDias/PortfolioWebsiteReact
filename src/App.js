@@ -5,7 +5,7 @@ import Workspace from "../src/Pages/Workspace";
 function App() {
   return (
     <div>
-      <BrowserRouter basename="/PortfolioWebsiteReact">
+      <BrowserRouter>
         <Switch>
           <Route path="/" exact render={() => <Main />} />
           <Route path="/workspace" exact render={() => <Workspace />} />
