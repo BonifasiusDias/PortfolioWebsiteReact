@@ -2,7 +2,9 @@
   "name": "portfoliowebsitereact",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://bonifasiusdias.github.io/PortfolioWebsiteReact/",
   "dependencies": {
+    "-": "0.0.1",
     "@craco/craco": "^6.4.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
@@ -14,6 +16,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "framer-motion": "^4.1.17",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hero-icon": "0.0.7",
@@ -23,6 +26,7 @@
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.4",
     "react-slick": "^0.28.1",
+    "save-dev": "0.0.1-security",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^1.1.2"
   },
@@ -30,7 +34,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
